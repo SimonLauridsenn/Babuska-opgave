@@ -1,0 +1,140 @@
+/*BURGERMENU CSS*/
+
+.toggle_knap {
+  /*fjerner hvordan en default knap ser ud*/
+  border: none;
+  background: transparent;
+
+  display: block;
+  min-width: 44px;
+  max-width: 65px;
+  min-height: 44px;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  /*placerer knap(erne) foran navens baggrundsfarve*/
+  z-index: 10;
+}
+button {
+  padding: 0.6rem;
+}
+
+.banner {
+  width: 100%;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(247, 243, 233);
+  /* display: flex;
+    justify-content: space-between;
+    flex-flow: wrap; */
+}
+
+/*overskiver mutual*/
+.banner a {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: #3b4029;
+
+  /*placering*/
+  /*translate sørger for at nav'en hele tiden er der, men bare rykker sig ind og ud af viewport*/
+  transform: translateX(100%);
+  transition: 0.5s;
+  position: fixed; /*låser*/
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  /*tekstens placering*/
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+  color: rgb(247, 243, 233);
+  margin: 0.5rem;
+  padding: 1rem;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+/* denne ændrer så når man hover over menuen skifter farven til hvid*/
+a:hover {
+  color: black;
+}
+
+/*Når nav har class 'shown' skal den translate*/
+nav.shown {
+  transform: translateX(0);
+}
+
+nav ul {
+  display: flex;
+  flex-flow: column;
+  list-style: none;
+  gap: 5rem;
+}
+/*socials ikoner*/
+nav img {
+  width: 80%;
+}
+
+.ikoner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ikoner a:hover {
+  opacity: 50%;
+}
+
+/*Normalt fylder den det hele, men i web fylder den kun lidt*/
+
+@media (min-width: 700px) {
+  nav {
+    width: 25%;
+    justify-content: start;
+    opacity: 90%;
+  }
+
+  nav ul {
+    margin-top: 150px; /*eller hvad der passer*/
+  }
+}
+
+.kryds {
+  display: none;
+}
+.toggle_knap.open .menu {
+  display: none;
+}
+
+.menu {
+  display: block;
+}
+.toggle_knap.open .kryds {
+  display: block;
+}
+
+body {
+  background-image: url(/img/bodyimg.svg);
+  max-width: 100%;
+  background-size: 100%;
+  background-repeat: repeat-y;
+  margin: 1.7rem;
+  background-color: rgb(247, 243, 233);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
