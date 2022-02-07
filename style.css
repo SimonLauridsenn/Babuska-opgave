@@ -14,7 +14,7 @@ section {
 }
 
 img {
-  height: 420px;
+  height: auto;
   width: 100%;
   object-fit: cover;
 }
@@ -29,6 +29,7 @@ h2 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   margin-left: 0.5rem;
+  font-weight: 600;
 }
 
 p {
@@ -71,7 +72,7 @@ a {
   text-decoration: none;
 }
 
-/* CSS */
+/* CSS til knapper */
 nav button {
   align-items: center;
   appearance: none;
@@ -121,7 +122,7 @@ nav button:active {
 }
 
 footer {
-  display: flex;
+  display: grid;
   gap: 20px;
   text-align: center;
   margin-top: 1rem;
@@ -129,9 +130,33 @@ footer {
   border-radius: 4px;
   padding-left: 2rem;
   justify-content: center;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 
 .valgt {
-  background-color: blue;
+  background-color: burlywood;
   color: aliceblue;
+}
+
+.pris {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.insta {
+  border: none;
+
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 0%;
+  width: 40px;
+  height: 50px;
+}
+
+.centrer {
+  display: flex;
+  justify-content: center;
 }

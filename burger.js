@@ -1,5 +1,5 @@
 const knapper = document.querySelector(".toggle_knap");
-const nav = document.querySelector(".burgermenuen");
+const nav = document.querySelector(".navburger");
 
 knapper.addEventListener("click", toggleMenu);
 

@@ -55,6 +55,7 @@ nav {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  padding-top: 4rem;
 }
 a {
   text-decoration: none;
@@ -123,14 +124,11 @@ nav img {
 .toggle_knap.open .kryds {
   display: block;
 }
-
+/* slut burger */
 body {
-  background-image: url(/img/bodyimg.svg);
   max-width: 100%;
   background-size: 100%;
-  background-repeat: repeat-y;
   margin: 1.7rem;
-  background-color: rgb(247, 243, 233);
 }
 
 img {
