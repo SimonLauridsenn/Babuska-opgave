@@ -34,7 +34,7 @@
         <li><a href="menu.html">MENU</a></li>
       </nav> -->
 
-      <nav>
+      <nav id="knapnav">
         <!-- class="button-30" role="button" skal på alle knapper for at style -->
         <button data-kategori="alle" class="valgt">Alle</button>
         <button data-kategori="forretter">Forretter</button>
@@ -46,6 +46,17 @@
     </header>
     <h1>Menu</h1>
     <h2>Alle</h2>
+
+    <aside id="modal">
+      <article>
+        <h2 class="navn"></h2>
+        <img src="" alt="" class="" />
+        <p class="kortbeskrivelse"></p>
+        <p class="pris"></p>
+        <p class="kategori"></p>
+      </article>
+    </aside>
+
     <section></section>
 
     <template>
@@ -64,7 +75,7 @@
       </div>
       <div class="centrer">
         <div class="insta">
-          <a href="https://alchemist.dk/">
+          <a href="https://www.instagram.com/nomacph/">
             <img src="/billeder/logo_simon.svg" alt="instalogo"
           /></a>
         </div>
@@ -75,6 +86,7 @@
       const section = document.querySelector("section");
       const template = document.querySelector("template").content;
       const header = document.querySelector("h2");
+      const modal = document.querySelector("#modal");
       let filter = "alle";
       let retter;
       const options = {
@@ -119,10 +131,24 @@
             klon.querySelector(".pris").textContent =
               "Pris " + ret.pris + " kr";
             klon.querySelector(".kategori").textContent = ret.kategori;
+            klon
+              .querySelector("article")
+              .addEventListener("click", () => visDetaljer(ret));
             section.appendChild(klon);
           }
         });
       }
+      function visDetaljer(ret) {
+        console.log(ret);
+        modal.querySelector("h2").textContent = ret.navn;
+        modal.querySelector("img").src = "medium/" + ret.billednavn + "-md.jpg";
+        modal.querySelector(".kortbeskrivelse").textContent =
+          ret.kortbeskrivelse;
+        modal.querySelector(".pris").textContent = "Pris " + ret.pris + " kr";
+        modal.querySelector(".kategori").textContent = ret.kategori;
+        modal.style.display = "block";
+      }
+      modal.addEventListener("click", () => (modal.style.display = "none"));
     </script>
     <!-- <script src="burger.js"></script> -->
   </body>

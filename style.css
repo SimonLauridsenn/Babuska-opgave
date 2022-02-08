@@ -6,6 +6,12 @@ body {
   background-color: moccasin;
 }
 
+img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
 section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -13,8 +19,8 @@ section {
   gap: 10px;
 }
 
-img {
-  height: auto;
+.billed {
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
@@ -55,12 +61,13 @@ nav {
   border-radius: 4px;
 }
 /* nagation på menu */
-.navi {
+#knapnav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.5rem;
-  padding: 2% 3%;
+  padding-left: 5rem;
+  padding-right: 5rem;
   font-family: "Oswald", sans-serif;
 }
 button {
@@ -118,7 +125,7 @@ nav button:hover {
 
 nav button:active {
   box-shadow: #d6d6e7 0 3px 7px inset;
-  transform: translateY(2px);
+  transform: translateY(4px);
 }
 
 footer {
@@ -159,4 +166,26 @@ footer {
 .centrer {
   display: flex;
   justify-content: center;
+}
+
+#modal {
+  top: 20px;
+  left: 300px;
+  display: none;
+  width: 50vw;
+  height: 50vh;
+  position: fixed;
+  border-radius: 4px;
+}
+
+#modal article {
+  max-width: 900px;
+  margin: auto;
+  background-color: lemonchiffon;
+}
+
+#modal img {
+  height: 420px;
+  width: 100%;
+  object-fit: cover;
 }
